@@ -4,51 +4,50 @@
 //+------------------------------------------------------------------+
 int init()
   {
-   //hua("test","ÏÔÊ¾×ÖÌå²âÊÔ",300,10,0,RosyBrown);
    if(IsTradeAllowed()==true)
       {
-         hua("eadagou","ÒÑ¾­´ò¹³ÔÊĞí×Ô¶¯½»Ò×",10,10,0,Yellow);
+         hua("eadagou","å·²ç»æ‰“é’©å…è®¸è‡ªåŠ¨äº¤æ˜“",10,10,0,Yellow);
           if(OrderSend(Symbol(),OP_BUY,MarketInfo(Symbol(),MODE_MINLOT),Ask,500,Ask-1000*Point,Ask+1000*Point)>0)
            {
-              hua("yunxuzhineng","ÔÊĞíEAÖÇÄÜ½»Ò×,²¢ÇÒÔÊĞíOrderSendº¯ÊıÉèÖÃÖ¹ËğºÍÖ¹Ó¯¼Û¸ñ",10,10,0);
+              hua("yunxuzhineng","å…è®¸EAæ™ºèƒ½äº¤æ˜“,å¹¶ä¸”å…è®¸OrderSendå‡½æ•°è®¾ç½®æ­¢æŸå’Œæ­¢ç›ˆä»·æ ¼",10,10,0);
            }
           else
            {
               if(OrderSend(Symbol(),OP_BUY,MarketInfo(Symbol(),MODE_MINLOT),Ask,500,0,0)>0)
                {
-                  hua("yunxuzhineng","ÔÊĞíEAÖÇÄÜ½»Ò×,µ«ÊÇOrderSendº¯ÊıÖ¹ËğºÍÖ¹Ó¯¼Û¸ñ±ØĞëÉèÖÃÎª0",10,10,0,Yellow);
+                  hua("yunxuzhineng","å…è®¸EAæ™ºèƒ½äº¤æ˜“,ä½†æ˜¯OrderSendå‡½æ•°æ­¢æŸå’Œæ­¢ç›ˆä»·æ ¼å¿…é¡»è®¾ç½®ä¸º0",10,10,0,Yellow);
                }
               else
                {
-                  hua("yunxuzhineng","²»ÔÊĞíEAÖÇÄÜ½»Ò×",10,10,0,Red);
+                  hua("yunxuzhineng","ä¸å…è®¸EAæ™ºèƒ½äº¤æ˜“",10,10,0,Red);
                }
            }
       }
    else
       {
-         hua("eadagou","Ã»ÓĞ´ò¹³ÔÊĞí×Ô¶¯½»Ò×",10,10,0,Red);
+         hua("eadagou","æ²¡æœ‰æ‰“é’©å…è®¸è‡ªåŠ¨äº¤æ˜“",10,10,0,Red);
       }
    if(IsDllsAllowed()==true)
       {
-         hua("dlldagou","ÒÑ¾­´ò¹³ÔÊĞíµ¼Èë¶¯Ì¬Á´½Ó¿â",10,25,0,Yellow);
+         hua("dlldagou","å·²ç»æ‰“é’©å…è®¸å¯¼å…¥åŠ¨æ€é“¾æ¥åº“",10,25,0,Yellow);
       }
    else
       {
-         hua("dlldagou","Ã»ÓĞ´ò¹³ÔÊĞíµ¼Èë¶¯Ì¬Á´½Ó¿â",10,25,0,Red);
+         hua("dlldagou","æ²¡æœ‰æ‰“é’©å…è®¸å¯¼å…¥åŠ¨æ€é“¾æ¥åº“",10,25,0,Red);
       }
-   hua("ganggan","½»Ò×¸Ü¸ËÊÇ"+AccountLeverage( ) +":1",10,40,0,Yellow);
-   hua("diancha","´Ë»õ±Ò¶ÔµÄµ±Ç°µã²î"+DoubleToStr(MarketInfo(Symbol(),MODE_SPREAD),0),10,55,0,Yellow);
-   hua("zuixiao","´Ë»õ±Ò¶ÔµÄ×îĞ¡ÏÂµ¥ÊÖÊı"+DoubleToStr(MarketInfo(Symbol(),MODE_MINLOT),2),10,70,0,Yellow);
-   hua("zuida","´Ë»õ±Ò¶ÔµÄ×î´óÏÂµ¥ÊÖÊı"+DoubleToStr(MarketInfo(Symbol(),MODE_MAXLOT),2),10,85,0,Yellow);
-   hua("baozhengjin","´Ë»õ±Ò¶Ô1±ê×¼ÊÖËùĞè±£Ö¤½ğ"+DoubleToStr(MarketInfo(Symbol(),MODE_MARGINREQUIRED),0)+"ÃÀ½ğ",10,100,0,Yellow);
-   hua("bodongyidian","ÏÂ1±ê×¼ÊÖ"+Symbol()+"¼Û¸ñ²¨¶¯"+DoubleToStr(Point,Digits)+"¾ÍÊÇ:"+DoubleToStr(MarketInfo(Symbol(),MODE_TICKVALUE),1)+"ÃÀ½ğ",10,115,0,Yellow); 
+   hua("ganggan","äº¤æ˜“æ æ†æ˜¯"+AccountLeverage( ) +":1",10,40,0,Yellow);
+   hua("diancha","æ­¤è´§å¸å¯¹çš„å½“å‰ç‚¹å·®"+DoubleToStr(MarketInfo(Symbol(),MODE_SPREAD),0),10,55,0,Yellow);
+   hua("zuixiao","æ­¤è´§å¸å¯¹çš„æœ€å°ä¸‹å•æ‰‹æ•°"+DoubleToStr(MarketInfo(Symbol(),MODE_MINLOT),2),10,70,0,Yellow);
+   hua("zuida","æ­¤è´§å¸å¯¹çš„æœ€å¤§ä¸‹å•æ‰‹æ•°"+DoubleToStr(MarketInfo(Symbol(),MODE_MAXLOT),2),10,85,0,Yellow);
+   hua("baozhengjin","æ­¤è´§å¸å¯¹1æ ‡å‡†æ‰‹æ‰€éœ€ä¿è¯é‡‘"+DoubleToStr(MarketInfo(Symbol(),MODE_MARGINREQUIRED),0)+"ç¾é‡‘",10,100,0,Yellow);
+   hua("bodongyidian","ä¸‹1æ ‡å‡†æ‰‹"+Symbol()+"ä»·æ ¼æ³¢åŠ¨"+DoubleToStr(Point,Digits)+"å°±æ˜¯:"+DoubleToStr(MarketInfo(Symbol(),MODE_TICKVALUE),1)+"ç¾é‡‘",10,115,0,Yellow); 
    if(IsExpertEnabled()==true)
      {
-         hua("anxia","ÒÑ¾­°´ÏÂÖÇÄÜ½»Ò×°´Å¥",10,130,0,Yellow);
+         hua("anxia","å·²ç»æŒ‰ä¸‹æ™ºèƒ½äº¤æ˜“æŒ‰é’®",10,130,0,Yellow);
      }
    else
      {
-         hua("anxia","Ã»ÓĞ°´ÏÂÖÇÄÜ½»Ò×°´Å¥",10,130,0,Red);
+         hua("anxia","æ²¡æœ‰æŒ‰ä¸‹æ™ºèƒ½äº¤æ˜“æŒ‰é’®",10,130,0,Red);
      }
    return(0);
   }
